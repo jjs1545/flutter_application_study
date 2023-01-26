@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 
 /// Extract Widget
 /// Widget 이름 앞에 _Widget으로 변경 시 private 형으로 변경
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+/// StatefulWidget 변경 시 priavte class 생성
+class _MyHomePageState extends State<MyHomePage> {
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,34 +25,21 @@ class MyHomePage extends StatelessWidget {
 
       /// 자주 사용되는 버튼 ElevatedButton, OutlinedButton, TextButton, GestureDetector
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ElevatedButton(
             onPressed: () {
-              print('ElevatedButton');
+              /// setState메소드가 있어야 build 재실행
+              setState(() {
+                count++;
+              });
             },
-            onLongPress: () {
-              print('ElevatedButton onLongPres`s!');
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.grey,
-            ),
-            child: const Text('ElevatedButton'),
+            child: const Text('plus'),
           ),
-          OutlinedButton(
-            onPressed: () {},
-            child: const Text('OutlinedButton'),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('TextButton'),
-          ),
-          GestureDetector(
-            onTap: () {},
-            onTapDown: (detail) {
-              print(
-                  'GestureDetector ${detail.kind} ! ${detail.globalPosition}');
-            },
-            child: const Text('GestureDetector'),
+          Center(
+            // width: MediaQuery.of(context).size.width,
+            child: Text('$count'),
           ),
         ],
       ),
