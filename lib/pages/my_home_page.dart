@@ -23,6 +23,19 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Flutter My App Bar'),
       ),
 
+      /// Scaffold안의 속성 버튼 활용 -> 오른쪽 하단 버튼
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            count++;
+          });
+        },
+        child: const Icon(
+          Icons.plus_one,
+          color: Colors.white,
+        ),
+      ),
+
       /// 자주 사용되는 버튼 ElevatedButton, OutlinedButton, TextButton, GestureDetector
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
