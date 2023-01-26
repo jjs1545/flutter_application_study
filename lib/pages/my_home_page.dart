@@ -11,29 +11,42 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// Ctrl+i -> 속성보기
-      appBar: AppBar(title: const Text('Flutter My App Bar')),
+      appBar: AppBar(
+        title: const Text('Flutter My App Bar'),
+      ),
 
-      /// Container -> div 역할
-      body: Container(
-        color: Colors.yellow,
-
-        /// alignment -> 컨테이너 전체에 적용(Container에 자식이 없는것 처럼 적용)
-        alignment: Alignment.center,
-
-        /// padding -> 안쪽 여백, 좌, 우 공백 조절
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 50,
-        ),
-
-        /// padding -> 바깥 여백, 좌, 우 공백 조절
-        margin: const EdgeInsets.symmetric(
-          horizontal: 50,
-          vertical: 50,
-        ),
-        width: 100,
-        height: 300,
-        child: const Text('Flutter My Home Page'),
+      /// 자주 사용되는 버튼 ElevatedButton, OutlinedButton, TextButton, GestureDetector
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              print('ElevatedButton');
+            },
+            onLongPress: () {
+              print('ElevatedButton onLongPres`s!');
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey,
+            ),
+            child: const Text('ElevatedButton'),
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: const Text('OutlinedButton'),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: const Text('TextButton'),
+          ),
+          GestureDetector(
+            onTap: () {},
+            onTapDown: (detail) {
+              print(
+                  'GestureDetector ${detail.kind} ! ${detail.globalPosition}');
+            },
+            child: const Text('GestureDetector'),
+          ),
+        ],
       ),
     );
   }
