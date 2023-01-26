@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 
 /// StatefulWidget 변경 시 priavte class 생성
 class _MyHomePageState extends State<MyHomePage> {
-  int count = 0;
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            count++;
+            _count++;
           });
         },
         child: const Icon(
@@ -45,14 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               /// setState메소드가 있어야 build 재실행
               setState(() {
-                count++;
+                _count++;
               });
             },
             child: const Text('plus'),
           ),
           Center(
             // width: MediaQuery.of(context).size.width,
-            child: Text('$count'),
+            child: Text('$_count'),
           ),
         ],
       ),
