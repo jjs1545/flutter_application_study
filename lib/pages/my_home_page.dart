@@ -16,8 +16,23 @@ class MyHomePage extends StatelessWidget {
       /// Container -> div 역할
       body: Container(
         color: Colors.yellow,
-        width: 500,
-        height: 200,
+
+        /// alignment -> 컨테이너 전체에 적용(Container에 자식이 없는것 처럼 적용)
+        alignment: Alignment.center,
+
+        /// padding -> 안쪽 여백, 좌, 우 공백 조절
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 50,
+        ),
+
+        /// padding -> 바깥 여백, 좌, 우 공백 조절
+        margin: const EdgeInsets.symmetric(
+          horizontal: 50,
+          vertical: 50,
+        ),
+        width: 100,
+        height: 300,
         child: const Text('Flutter My Home Page'),
       ),
     );
