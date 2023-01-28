@@ -38,6 +38,12 @@ class _ImageHomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Image.network(
+              'https://image.ytn.co.kr/general/jpg/2021/1029/202110291540080554_d.jpg',
+              width: 300,
+              height: 300,
+              fit: BoxFit.cover,
+            ),
             Image.asset('assets/image/model3.jpg'),
             Image.asset('assets/image/Tesla_fsd.gif'),
             Image.asset('assets/image/Elon.jpg'),
