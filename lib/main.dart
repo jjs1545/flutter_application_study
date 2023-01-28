@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/page1.dart';
+import 'package:flutter_application_study/pages/image_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       // home: const JusinHomePage(),
-      home: const Page1(),
+      home: const ImagePage(),
     );
   }
 }
