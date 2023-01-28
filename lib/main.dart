@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_study/pages/my_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,37 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       // home: const JusinHomePage(),
-      home: const MyHomePage(),
+      home: const MyWidget(
+        name: 'Justin',
+        title: 'Title',
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({
+    super.key,
+    required this.name,
+    required this.title,
+  });
+
+  final String name;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Hello $name World'),
+            Text('Hello $title World'),
+          ],
+        ),
+      ),
     );
   }
 }
